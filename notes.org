@@ -1,0 +1,424 @@
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-bigblow.setup
+
+These are my notes from the Udemy course Complete Modern C++ (C++11/14/17)
+
+
+Notas de cosas a repasar!
+
+* Section 1 - Start Here
+No notes, this section covers installing a compiler
+
+* Section 2 - Basic Language Facilities
+
+** <climits> & <limits.h>
+climits & limits.h provide macros that represent the minimum and maximum values of a type
+
+Example:
+
+#+BEGIN_SRC C++
+#define CHAR_BIT 8 // Number of bits in char
+
+#define INT_MIN (-2147483647 -1) // Minimum signed int value
+#define INT_MAX 2147483647 // Maximum int value
+#+END_SRC
+
+** <cfloat> & <float.h>
+
+This files hold macros for floats & doubles range limits, Epsilon and more.
+
+** Input/Output streams
+
+
+#include <iostream>
+
+C++ provides 2 classes for input and output
+
+std::ostream is for output
+std::istream is for input
+
+std::cout is an object of the ostream class
+std::cin is an object of the istream class
+
+
+std::cin stops reading from keyboard when it encounters a whitespace
+character, in order to read a whole line we need to use
+std::cin.getline()
+
+** Uniform initialization
+
+Uniform initialization is a feature in C++ 11 that allows the usage of
+a consistent syntax to initialize variables and objects ranging from
+primitive type to aggregates. In other words, it introduces
+brace-initialization that uses braces ({}) to enclose initializer
+values.
+
+#+BEGIN_SRC C++
+int i{};     // initialized built-in type, equals to int i{0};
+
+int j{10}; // initialized built-in type
+
+int a[]{1, 2, 3, 4} // Aggregate initialization
+
+X x1{}; // default constructor
+
+X x2{1}; // Parameterized constructor;
+
+X x4{x3}; // copy-constructor
+#+END_SRC
+
+** nullptr
+
+Always use nullptr instead of NULL to initialize pointers
+
+NULL is a “manifest constant” (a #define of C) that’s actually an integer that can be assigned to a pointer because of an implicit conversion.
+
+nullptr is a keyword representing a value of self-defined type, that can convert into a pointer, but not into integers.
+
+#+BEGIN_SRC C++
+int i = NULL; // OK
+int i = nullptr; // error - not a integer convertible value
+int* p = NULL; //ok - int converted into pointer
+int* p = nullptr; // ok
+That, is important to solve an ambiguity that can arise in generic programming:
+#+END_SRC
+
+suppose you have two functions in overload:
+
+#+BEGIN_SRC C++
+void func(int x);
+void func(int* x);
+#+END_SRC
+
+Now, if you call func(NULL), you are actually calling … the 1) variant, being NULL an int. But func(nullptr) will call the 2) variant, being nullptr not an int.
+
+To avoid the risk to call one function instead of another, always use 0 if you want an integer, and nullptr if you want a pointer.
+** References
+Estudiar references, saberse las diferencias con un puntero!
+** const
+Repasar const, anotar que es y las varias formas que puede ser usado
+
+Se puede intentar leer desde la derecha hacia la izquierda
+** std::begin() & std::end() - for range loops
+
+#+BEGIN_SRC C++
+int Array[] = {1, 2, 3, 4, 5};
+
+// begin and end are usually member functions of containers, but there are also function versions
+int *Begin = std::begin(Array);
+int *End = std::end(Array);
+
+// std::begin() & std::end() are used to implement for ranged loops using pointer arithmetic
+
+#+END_SRC
+** for range loops with custom classes
+If you want to use range based for loops with your custom classes you need to provide iterators for the class
+** Namespaces
+
+Using an anonimous namespace will make all the functions, classes,
+data visible only on the same .cpp file, similar to static
+
+#+BEGIN_SRC C++
+namespace
+{
+int ThisFunction();
+}
+#+END_SRC
+
+// This function is only visible on the same .cpp file as the anonymous namespace is implemented/declared.
+* Section 4 - Classes and Objects
+
+** Basic principles that help us write OO programs
+- Abstraction
+- Encapsulation
+- Inheritance
+- Polymorphism
+** this pointer
+
+It's a hidden pointer that's passed to every member function
+
+Points to the object that invoked the member function
+
+** Static class members
+
+static variables
+- use static as a qualifier for the variable, ex: static int Integer;
+- Static variables are not part of the object, they belong to the class.
+- Only one copy exists across all objects of the same class.
+- They cannot be initialized inside the class
+- They have to be defined outside the class for initialization
+- The compiler by default assigns 0 as a default value
+
+#+BEGIN_SRC C+++
+class car
+{
+private:
+    static int ExampleVariable;
+};
+
+// In the class .cpp file initialize the static variable like this:
+int car::ExampleVariable = 10; // If nothing is assigned, the compiler defaults the variable to 0
+#+END_SRC
+
+static functions
+
+If we dont have any objects but we still need to access the static variable, we can create static member functions.
+
+- assign the static qualifier to a function
+- The also belong to a class and not objects
+- They do not recieve the this pointer
+- They cannot access non-static members of the class since it does not recieve the this pointer
+- They can be invoked directly through the class name
+
+#+BEGIN_SRC C++
+class car
+{
+    static void ExampleFunction();
+};
+
+// in car.cpp
+
+void car::ExampleFunction()
+{
+    // Do something
+}
+#+END_SRC
+
+** const/constant member functions
+- const member functions cannot change the value of any member variable
+- they are qualified with the const keyword
+- Declaration and definition are qualified
+- useful for creating read-only functions
+- const objects can invoke only const member functions
+- we should add const to member functions that do not change the object's state
+
+#+BEGIN_SRC C++
+const Car HondaFit; // Honda Fit can only invoke const member functions
+
+class Car
+{
+    // const is added to the end of the statement, it also needs to be added in function definition
+    void ConstantMemberFunction() const;
+
+};
+
+// Car.cpp
+
+void Car::ConstantMemberFunction() const
+{
+    // Do something
+}
+#+END_SRC
+
+** Copy constructors
+
+- A copy constructor creates a copy of the object's state into another object
+- If no copy constructor is explicitdly defined, C++ creates one that simply copies values.
+- Custom copy constructors might be needed when the class has pointer
+  members and the two objects should not hold the same ptr.
+- Default pointer member variables may crash the application while
+  creating a shallow copy of the member pointers, that's one reason we
+  may need custom copy constructors
+
+#+BEGIN_SRC C++
+class Integer
+{
+    int *m_pInt;
+public:
+    Integer();
+    Integer(int Value);
+    int GetValue() const;
+    void SetValue(int Value);
+    ~Integer();
+};
+
+Integer::Integer()
+{
+    m_pInt = new int(0);
+}
+
+Integer::Integer(int Value)
+{
+    m_pInt = new int(Value);
+}
+
+int Integer::GetValue() const
+{
+    return *m_pInt;
+}
+
+void Integer::SetValue(int Value)
+{
+    *m_pInt = Value;
+}
+
+Integer::~Integer()
+{
+    delete m_pInt;
+}
+
+// NOTE: This function creates a copy constructor because the object parameter is passed by value
+void Print(Integer i)
+{
+    std::cout << i << std::endl;
+}
+
+// NOTE: This function makes C++ create a copy constructor because it returns by value
+Integer Add(int x, int y)
+{
+    return Integer(x + y);
+}
+
+int main()
+{
+
+    Integer i(5);
+    Integer i2(i); // This causes C++ to generate a default copy constructor for our class
+
+    i2 = i; // This also invokes a copy constructor
+    std::cout << i.GetValue() << std::endl;
+
+    return 0;
+}
+
+#+END_SRC
+
+#+BEGIN_SRC C++
+// How to create a custom copy constructor
+
+class Integer
+{
+    int *m_pInt;
+public:
+    // This is how we declare a copy constructor, it MUST pass object by reference
+    Integer(Integer &Obj);
+};
+
+Integer::Integer(Integer &Obj)
+{
+    // The following is called a "Deep Copy" of a pointer. A shallow copy just copies the address.
+    m_pInt = new int;
+    *m_pInt = Obj.m_pInt;
+
+}
+
+#+END_SRC
+
+*** How to tell if a class needs a custom copy constructor
+
+**** The rule of 3
+The Rule of Three states that if a type ever needs to have a
+user-defined copy constructor, copy assignment operator, or
+destructor, then it must have all three.
+
+** Delegating constructor
+
+Delegating constructor are constructors that call other constructors.
+
+Suppose we have a few constructors that contain repeated code. That
+may become a source of bugs, so the idea is to create a single
+constructor that does the shared code and call that constructor from
+the other constructors.
+
+#+BEGIN_SRC C++
+
+  class Car
+  {
+  public:
+      Car::Car();
+      Car::Car(float Fuel);
+      Car::Car(float Fuel, int Passengers);
+  private:
+      int Passengers;
+      float Amount;
+  };
+
+  Car::Car : Car(0) // The default constructor invokes the constructor
+		    // with 1 parameter, the constructor invoked runs
+		    // first. In this case the constructor with the 2
+		    // parameters is the one that gets executed first
+  {
+
+  }
+
+  Car::Car(float amount) : Car(amount, 0) // The constructor with 1
+					  // parameter invokes the
+					  // constructor with 2
+					  // parameters
+  {
+  }
+
+  Car::Car(float amount, int passengers) // This constructor holds the
+					 // shared code between
+					 // constructors. Now it lives
+					 // in only one place
+  {
+      Amount = amount;
+      Passengers = passengers;
+  }
+
+
+#+END_SRC
+
+** default and delete functions
+
+In C++11 you can request the compiler to create default implementation
+of constructor by using the default keyword.
+
+You can only use the default keyword with those functions that can be created by the compiler.
+- Constructors
+- Copy Constructors
+- = operator
+
+#+BEGIN_SRC C++
+
+class Integer
+{
+    int m_Value{0};
+public:
+    Integer() = default; // This request the compiler to create a default constructor
+    Integer(const Integer &Object) = default; // Request the compiler to generate a default copy constructor
+};
+
+#+END_SRC
+
+the delete keyword is used to tell the compiler not to generate
+functions.
+
+#+BEGIN_SRC C++
+
+  class Integer
+  {
+      int m_Value{0};
+  public:
+      Integer(const Integer &Object) = delete; // This request the compiler to not generate a copy constructor.
+  };
+
+  void main()
+  {
+      Integer i1;
+      Integer i2(i1); // This will not compile since we prohibited a copy constructor to be used.
+  }
+
+#+END_SRC
+
+Unlike default, delete can be used in any kind of function.
+#+BEGIN_SRC C++
+
+  void Test(int Input)
+  {
+      cout << Input;
+  }
+
+  void Test(float Input) = delete;
+
+
+  void main()
+  {
+  int A = 1;
+  float B = 10.0f;
+  Test(B); // Without using the keyword delete, The parameter would be
+	   // converted to int and the int function called. Now this is a
+	   // compile time error.
+  }
+
+#+END_SRC
