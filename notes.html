@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-06-04 Sat 15:49 -->
+<!-- 2022-06-06 Mon 12:31 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -19,6 +19,7 @@
 <script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/bigblow_theme/js/bigblow.js"></script>
 <script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/bigblow_theme/js/hideshow.js"></script>
 <script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+<link rel="stylesheet" type="text/css" href="notes.css" />
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -72,34 +73,34 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org59c991d">1. Section 1 - Start Here</a></li>
-<li><a href="#org5ac8d87">2. Section 2 - Basic Language Facilities</a>
+<li><a href="#orgee8dbf0">1. Section 1 - Start Here</a></li>
+<li><a href="#org10a966c">2. Section 2 - Basic Language Facilities</a>
 <ul>
-<li><a href="#orgc436ce6">2.1. &lt;climits&gt; &amp; &lt;limits.h&gt;</a></li>
-<li><a href="#orgb1cd0dc">2.2. &lt;cfloat&gt; &amp; &lt;float.h&gt;</a></li>
-<li><a href="#org98b5292">2.3. Input/Output streams</a></li>
-<li><a href="#org26d05b8">2.4. Uniform initialization</a></li>
-<li><a href="#org55e3b09">2.5. nullptr</a></li>
-<li><a href="#orgf7a81bf">2.6. References</a></li>
-<li><a href="#orgc1b9f41">2.7. const</a></li>
-<li><a href="#orge35eaf4">2.8. std::begin() &amp; std::end() - for range loops</a></li>
-<li><a href="#orga6d4f52">2.9. for range loops with custom classes</a></li>
-<li><a href="#org724f23f">2.10. Namespaces</a></li>
+<li><a href="#org49dc317">2.1. &lt;climits&gt; &amp; &lt;limits.h&gt;</a></li>
+<li><a href="#org27167ae">2.2. &lt;cfloat&gt; &amp; &lt;float.h&gt;</a></li>
+<li><a href="#org7bf9bf9">2.3. Input/Output streams</a></li>
+<li><a href="#org9dee08d">2.4. Uniform initialization</a></li>
+<li><a href="#orge9efc13">2.5. nullptr</a></li>
+<li><a href="#org5abb28a">2.6. References</a></li>
+<li><a href="#org5967486">2.7. const</a></li>
+<li><a href="#org6ad9de7">2.8. std::begin() &amp; std::end() - for range loops</a></li>
+<li><a href="#org8a97d80">2.9. for range loops with custom classes</a></li>
+<li><a href="#org231cee2">2.10. Namespaces</a></li>
 </ul>
 </li>
-<li><a href="#org1fd0f67">3. Section 4 - Classes and Objects</a>
+<li><a href="#org868579a">3. Section 4 - Classes and Objects</a>
 <ul>
-<li><a href="#org3ad685b">3.1. Basic principles that help us write OO programs</a></li>
-<li><a href="#org71749b8">3.2. this pointer</a></li>
-<li><a href="#org0897ace">3.3. Static class members</a></li>
-<li><a href="#orgcd3f4c5">3.4. const/constant member functions</a></li>
-<li><a href="#orgabd502d">3.5. Copy constructors</a>
+<li><a href="#orgf57819a">3.1. Basic principles that help us write OO programs</a></li>
+<li><a href="#org24ff676">3.2. this pointer</a></li>
+<li><a href="#org3bee743">3.3. Static class members</a></li>
+<li><a href="#org8af684c">3.4. const/constant member functions</a></li>
+<li><a href="#org7cff6f3">3.5. Copy constructors</a>
 <ul>
-<li><a href="#orge0029e8">3.5.1. How to tell if a class needs a custom copy constructor</a></li>
+<li><a href="#org17f7de6">3.5.1. How to tell if a class needs a custom copy constructor</a></li>
 </ul>
 </li>
-<li><a href="#org23cdc4d">3.6. Delegating constructor</a></li>
-<li><a href="#org7232865">3.7. default and delete functions</a></li>
+<li><a href="#org96e8da7">3.6. Delegating constructor</a></li>
+<li><a href="#org013bc86">3.7. default and delete functions</a></li>
 </ul>
 </li>
 </ul>
@@ -114,8 +115,8 @@ These are my notes from the Udemy course Complete Modern C++ (C++11/14/17)
 Notas de cosas a repasar!
 </p>
 
-<div id="outline-container-org59c991d" class="outline-2">
-<h2 id="org59c991d"><span class="section-number-2">1</span> Section 1 - Start Here</h2>
+<div id="outline-container-orgee8dbf0" class="outline-2">
+<h2 id="orgee8dbf0"><span class="section-number-2">1</span> Section 1 - Start Here</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 No notes, this section covers installing a compiler
@@ -123,12 +124,12 @@ No notes, this section covers installing a compiler
 </div>
 </div>
 
-<div id="outline-container-org5ac8d87" class="outline-2">
-<h2 id="org5ac8d87"><span class="section-number-2">2</span> Section 2 - Basic Language Facilities</h2>
+<div id="outline-container-org10a966c" class="outline-2">
+<h2 id="org10a966c"><span class="section-number-2">2</span> Section 2 - Basic Language Facilities</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-orgc436ce6" class="outline-3">
-<h3 id="orgc436ce6"><span class="section-number-3">2.1</span> &lt;climits&gt; &amp; &lt;limits.h&gt;</h3>
+<div id="outline-container-org49dc317" class="outline-3">
+<h3 id="org49dc317"><span class="section-number-3">2.1</span> &lt;climits&gt; &amp; &lt;limits.h&gt;</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 climits &amp; limits.h provide macros that represent the minimum and maximum values of a type
@@ -139,17 +140,17 @@ Example:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-C++">#define CHAR_BIT 8 // Number of bits in char
+<pre class="src src-C++"><span style="color: #ffd700;">#define</span> <span style="color: #4eee94;">CHAR_BIT</span> 8 <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">Number of bits in char</span>
 
-#define INT_MIN (-2147483647 -1) // Minimum signed int value
-#define INT_MAX 2147483647 // Maximum int value
+<span style="color: #ffd700;">#define</span> <span style="color: #4eee94;">INT_MIN</span> (-2147483647 -1) <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">Minimum signed int value</span>
+<span style="color: #ffd700;">#define</span> <span style="color: #4eee94;">INT_MAX</span> 2147483647 <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">Maximum int value</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgb1cd0dc" class="outline-3">
-<h3 id="orgb1cd0dc"><span class="section-number-3">2.2</span> &lt;cfloat&gt; &amp; &lt;float.h&gt;</h3>
+<div id="outline-container-org27167ae" class="outline-3">
+<h3 id="org27167ae"><span class="section-number-3">2.2</span> &lt;cfloat&gt; &amp; &lt;float.h&gt;</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 This files hold macros for floats &amp; doubles range limits, Epsilon and more.
@@ -157,8 +158,8 @@ This files hold macros for floats &amp; doubles range limits, Epsilon and more.
 </div>
 </div>
 
-<div id="outline-container-org98b5292" class="outline-3">
-<h3 id="org98b5292"><span class="section-number-3">2.3</span> Input/Output streams</h3>
+<div id="outline-container-org7bf9bf9" class="outline-3">
+<h3 id="org7bf9bf9"><span class="section-number-3">2.3</span> Input/Output streams</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 #include &lt;iostream&gt;
@@ -187,8 +188,8 @@ std::cin.getline()
 </div>
 </div>
 
-<div id="outline-container-org26d05b8" class="outline-3">
-<h3 id="org26d05b8"><span class="section-number-3">2.4</span> Uniform initialization</h3>
+<div id="outline-container-org9dee08d" class="outline-3">
+<h3 id="org9dee08d"><span class="section-number-3">2.4</span> Uniform initialization</h3>
 <div class="outline-text-3" id="text-2-4">
 <p>
 Uniform initialization is a feature in C++ 11 that allows the usage of
@@ -199,24 +200,24 @@ values.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-C++">int i{};     // initialized built-in type, equals to int i{0};
+<pre class="src src-C++"><span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">i</span>{};     <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">initialized built-in type, equals to int i{0};</span>
 
-int j{10}; // initialized built-in type
+<span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">j</span>{10}; <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">initialized built-in type</span>
 
-int a[]{1, 2, 3, 4} // Aggregate initialization
+<span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">a</span>[]{1, 2, 3, 4} <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">Aggregate initialization</span>
 
-X x1{}; // default constructor
+<span style="color: #98f5ff;">X</span> <span style="color: #4eee94;">x1</span>{}; <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">default constructor</span>
 
-X x2{1}; // Parameterized constructor;
+<span style="color: #98f5ff;">X</span> <span style="color: #4eee94;">x2</span>{1}; <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">Parameterized constructor;</span>
 
-X x4{x3}; // copy-constructor
+<span style="color: #98f5ff;">X</span> <span style="color: #4eee94;">x4</span>{x3}; <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">copy-constructor</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org55e3b09" class="outline-3">
-<h3 id="org55e3b09"><span class="section-number-3">2.5</span> nullptr</h3>
+<div id="outline-container-orge9efc13" class="outline-3">
+<h3 id="orge9efc13"><span class="section-number-3">2.5</span> nullptr</h3>
 <div class="outline-text-3" id="text-2-5">
 <p>
 Always use nullptr instead of NULL to initialize pointers
@@ -231,11 +232,11 @@ nullptr is a keyword representing a value of self-defined type, that can convert
 </p>
 
 <div class="org-src-container">
-<pre class="src src-C++">int i = NULL; // OK
-int i = nullptr; // error - not a integer convertible value
-int* p = NULL; //ok - int converted into pointer
-int* p = nullptr; // ok
-That, is important to solve an ambiguity that can arise in generic programming:
+<pre class="src src-C++"><span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">i</span> = <span style="color: #a2cd5a;">NULL</span>; <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">OK</span>
+<span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">i</span> = <span style="color: #a2cd5a;">nullptr</span>; <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">error - not a integer convertible value</span>
+<span style="color: #98f5ff;">int</span>* <span style="color: #4eee94;">p</span> = <span style="color: #a2cd5a;">NULL</span>; <span style="color: #7f7f7f;">//</span><span style="color: #7f7f7f;">ok - int converted into pointer</span>
+<span style="color: #98f5ff;">int</span>* <span style="color: #4eee94;">p</span> = <span style="color: #a2cd5a;">nullptr</span>; <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">ok</span>
+That, is important to solve an ambiguity that can arise in <span style="color: #98f5ff;">generic</span> <span style="color: #4eee94;">programming</span>:
 </pre>
 </div>
 
@@ -244,8 +245,8 @@ suppose you have two functions in overload:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-C++">void func(int x);
-void func(int* x);
+<pre class="src src-C++"><span style="color: #98f5ff;">void</span> <span style="color: #daa520;">func</span>(<span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">x</span>);
+<span style="color: #98f5ff;">void</span> <span style="color: #daa520;">func</span>(<span style="color: #98f5ff;">int</span>* <span style="color: #4eee94;">x</span>);
 </pre>
 </div>
 
@@ -258,16 +259,16 @@ To avoid the risk to call one function instead of another, always use 0 if you w
 </p>
 </div>
 </div>
-<div id="outline-container-orgf7a81bf" class="outline-3">
-<h3 id="orgf7a81bf"><span class="section-number-3">2.6</span> References</h3>
+<div id="outline-container-org5abb28a" class="outline-3">
+<h3 id="org5abb28a"><span class="section-number-3">2.6</span> References</h3>
 <div class="outline-text-3" id="text-2-6">
 <p>
 Estudiar references, saberse las diferencias con un puntero!
 </p>
 </div>
 </div>
-<div id="outline-container-orgc1b9f41" class="outline-3">
-<h3 id="orgc1b9f41"><span class="section-number-3">2.7</span> const</h3>
+<div id="outline-container-org5967486" class="outline-3">
+<h3 id="org5967486"><span class="section-number-3">2.7</span> const</h3>
 <div class="outline-text-3" id="text-2-7">
 <p>
 Repasar const, anotar que es y las varias formas que puede ser usado
@@ -278,32 +279,32 @@ Se puede intentar leer desde la derecha hacia la izquierda
 </p>
 </div>
 </div>
-<div id="outline-container-orge35eaf4" class="outline-3">
-<h3 id="orge35eaf4"><span class="section-number-3">2.8</span> std::begin() &amp; std::end() - for range loops</h3>
+<div id="outline-container-org6ad9de7" class="outline-3">
+<h3 id="org6ad9de7"><span class="section-number-3">2.8</span> std::begin() &amp; std::end() - for range loops</h3>
 <div class="outline-text-3" id="text-2-8">
 <div class="org-src-container">
-<pre class="src src-C++">int Array[] = {1, 2, 3, 4, 5};
+<pre class="src src-C++"><span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">Array</span>[] = {1, 2, 3, 4, 5};
 
-// begin and end are usually member functions of containers, but there are also function versions
-int *Begin = std::begin(Array);
-int *End = std::end(Array);
+<span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">begin and end are usually member functions of containers, but there are also function versions</span>
+<span style="color: #98f5ff;">int</span> *<span style="color: #4eee94;">Begin</span> = <span style="color: #a2cd5a;">std</span>::begin(Array);
+<span style="color: #98f5ff;">int</span> *<span style="color: #4eee94;">End</span> = <span style="color: #a2cd5a;">std</span>::end(Array);
 
-// std::begin() &amp; std::end() are used to implement for ranged loops using pointer arithmetic
+<span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">std::begin() &amp; std::end() are used to implement for ranged loops using pointer arithmetic</span>
 
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orga6d4f52" class="outline-3">
-<h3 id="orga6d4f52"><span class="section-number-3">2.9</span> for range loops with custom classes</h3>
+<div id="outline-container-org8a97d80" class="outline-3">
+<h3 id="org8a97d80"><span class="section-number-3">2.9</span> for range loops with custom classes</h3>
 <div class="outline-text-3" id="text-2-9">
 <p>
 If you want to use range based for loops with your custom classes you need to provide iterators for the class
 </p>
 </div>
 </div>
-<div id="outline-container-org724f23f" class="outline-3">
-<h3 id="org724f23f"><span class="section-number-3">2.10</span> Namespaces</h3>
+<div id="outline-container-org231cee2" class="outline-3">
+<h3 id="org231cee2"><span class="section-number-3">2.10</span> Namespaces</h3>
 <div class="outline-text-3" id="text-2-10">
 <p>
 Using an anonimous namespace will make all the functions, classes,
@@ -311,9 +312,9 @@ data visible only on the same .cpp file, similar to static
 </p>
 
 <div class="org-src-container">
-<pre class="src src-C++">namespace
+<pre class="src src-C++"><span style="color: #00bfff;">namespace</span>
 {
-int ThisFunction();
+<span style="color: #98f5ff;">int</span> <span style="color: #daa520;">ThisFunction</span>();
 }
 </pre>
 </div>
@@ -324,12 +325,12 @@ int ThisFunction();
 </div>
 </div>
 </div>
-<div id="outline-container-org1fd0f67" class="outline-2">
-<h2 id="org1fd0f67"><span class="section-number-2">3</span> Section 4 - Classes and Objects</h2>
+<div id="outline-container-org868579a" class="outline-2">
+<h2 id="org868579a"><span class="section-number-2">3</span> Section 4 - Classes and Objects</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org3ad685b" class="outline-3">
-<h3 id="org3ad685b"><span class="section-number-3">3.1</span> Basic principles that help us write OO programs</h3>
+<div id="outline-container-orgf57819a" class="outline-3">
+<h3 id="orgf57819a"><span class="section-number-3">3.1</span> Basic principles that help us write OO programs</h3>
 <div class="outline-text-3" id="text-3-1">
 <ul class="org-ul">
 <li>Abstraction</li>
@@ -339,8 +340,8 @@ int ThisFunction();
 </ul>
 </div>
 </div>
-<div id="outline-container-org71749b8" class="outline-3">
-<h3 id="org71749b8"><span class="section-number-3">3.2</span> this pointer</h3>
+<div id="outline-container-org24ff676" class="outline-3">
+<h3 id="org24ff676"><span class="section-number-3">3.2</span> this pointer</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 It's a hidden pointer that's passed to every member function
@@ -352,8 +353,8 @@ Points to the object that invoked the member function
 </div>
 </div>
 
-<div id="outline-container-org0897ace" class="outline-3">
-<h3 id="org0897ace"><span class="section-number-3">3.3</span> Static class members</h3>
+<div id="outline-container-org3bee743" class="outline-3">
+<h3 id="org3bee743"><span class="section-number-3">3.3</span> Static class members</h3>
 <div class="outline-text-3" id="text-3-3">
 <p>
 static variables
@@ -396,24 +397,24 @@ If we dont have any objects but we still need to access the static variable, we 
 </ul>
 
 <div class="org-src-container">
-<pre class="src src-C++">class car
+<pre class="src src-C++"><span style="color: #00bfff;">class</span> <span style="color: #98f5ff;">car</span>
 {
-    static void ExampleFunction();
+    <span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">ExampleFunction</span>();
 };
 
-// in car.cpp
+<span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">in car.cpp</span>
 
-void car::ExampleFunction()
+<span style="color: #98f5ff;">void</span> <span style="color: #a2cd5a;">car</span>::<span style="color: #daa520;">ExampleFunction</span>()
 {
-    // Do something
+    <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">Do something</span>
 }
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgcd3f4c5" class="outline-3">
-<h3 id="orgcd3f4c5"><span class="section-number-3">3.4</span> const/constant member functions</h3>
+<div id="outline-container-org8af684c" class="outline-3">
+<h3 id="org8af684c"><span class="section-number-3">3.4</span> const/constant member functions</h3>
 <div class="outline-text-3" id="text-3-4">
 <ul class="org-ul">
 <li>const member functions cannot change the value of any member variable</li>
@@ -425,28 +426,28 @@ void car::ExampleFunction()
 </ul>
 
 <div class="org-src-container">
-<pre class="src src-C++">const Car HondaFit; // Honda Fit can only invoke const member functions
+<pre class="src src-C++"><span style="color: #00bfff;">const</span> <span style="color: #98f5ff;">Car</span> <span style="color: #4eee94;">HondaFit</span>; <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">Honda Fit can only invoke const member functions</span>
 
-class Car
+<span style="color: #00bfff;">class</span> <span style="color: #98f5ff;">Car</span>
 {
-    // const is added to the end of the statement, it also needs to be added in function definition
-    void ConstantMemberFunction() const;
+    <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">const is added to the end of the statement, it also needs to be added in function definition</span>
+    <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">ConstantMemberFunction</span>() <span style="color: #00bfff;">const</span>;
 
 };
 
-// Car.cpp
+<span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">Car.cpp</span>
 
-void Car::ConstantMemberFunction() const
+<span style="color: #98f5ff;">void</span> <span style="color: #a2cd5a;">Car</span>::<span style="color: #daa520;">ConstantMemberFunction</span>() <span style="color: #00bfff;">const</span>
 {
-    // Do something
+    <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">Do something</span>
 }
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgabd502d" class="outline-3">
-<h3 id="orgabd502d"><span class="section-number-3">3.5</span> Copy constructors</h3>
+<div id="outline-container-org7cff6f3" class="outline-3">
+<h3 id="org7cff6f3"><span class="section-number-3">3.5</span> Copy constructors</h3>
 <div class="outline-text-3" id="text-3-5">
 <ul class="org-ul">
 <li>A copy constructor creates a copy of the object's state into another object</li>
@@ -459,84 +460,84 @@ may need custom copy constructors</li>
 </ul>
 
 <div class="org-src-container">
-<pre class="src src-C++">class Integer
+<pre class="src src-C++"><span style="color: #00bfff;">class</span> <span style="color: #98f5ff;">Integer</span>
 {
-    int *m_pInt;
-public:
-    Integer();
-    Integer(int Value);
-    int GetValue() const;
-    void SetValue(int Value);
-    ~Integer();
+    <span style="color: #98f5ff;">int</span> *<span style="color: #4eee94;">m_pInt</span>;
+<span style="color: #00bfff;">public</span>:
+    <span style="color: #daa520;">Integer</span>();
+    <span style="color: #daa520;">Integer</span>(<span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">Value</span>);
+    <span style="color: #98f5ff;">int</span> <span style="color: #daa520;">GetValue</span>() <span style="color: #00bfff;">const</span>;
+    <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">SetValue</span>(<span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">Value</span>);
+    ~<span style="color: #daa520;">Integer</span>();
 };
 
-Integer::Integer()
+<span style="color: #a2cd5a;">Integer</span>::<span style="color: #daa520;">Integer</span>()
 {
-    m_pInt = new int(0);
+    m_pInt = <span style="color: #00bfff;">new</span> <span style="color: #98f5ff;">int</span>(0);
 }
 
-Integer::Integer(int Value)
+<span style="color: #a2cd5a;">Integer</span>::<span style="color: #daa520;">Integer</span>(<span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">Value</span>)
 {
-    m_pInt = new int(Value);
+    m_pInt = <span style="color: #00bfff;">new</span> <span style="color: #98f5ff;">int</span>(Value);
 }
 
-int Integer::GetValue() const
+<span style="color: #98f5ff;">int</span> <span style="color: #a2cd5a;">Integer</span>::<span style="color: #daa520;">GetValue</span>() <span style="color: #00bfff;">const</span>
 {
-    return *m_pInt;
+    <span style="color: #00bfff;">return</span> *m_pInt;
 }
 
-void Integer::SetValue(int Value)
+<span style="color: #98f5ff;">void</span> <span style="color: #a2cd5a;">Integer</span>::<span style="color: #daa520;">SetValue</span>(<span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">Value</span>)
 {
     *m_pInt = Value;
 }
 
-Integer::~Integer()
+<span style="color: #a2cd5a;">Integer</span>::~<span style="color: #daa520;">Integer</span>()
 {
-    delete m_pInt;
+    <span style="color: #00bfff;">delete</span> m_pInt;
 }
 
-// NOTE: This function creates a copy constructor because the object parameter is passed by value
-void Print(Integer i)
+<span style="color: #7f7f7f;">// </span><span style="color: #006400; font-weight: bold;">NOTE</span><span style="color: #7f7f7f;">: This function creates a copy constructor because the object parameter is passed by value</span>
+<span style="color: #98f5ff;">void</span> <span style="color: #daa520;">Print</span>(<span style="color: #98f5ff;">Integer</span> <span style="color: #4eee94;">i</span>)
 {
-    std::cout &lt;&lt; i &lt;&lt; std::endl;
+    <span style="color: #a2cd5a;">std</span>::cout &lt;&lt; i &lt;&lt; <span style="color: #a2cd5a;">std</span>::endl;
 }
 
-// NOTE: This function makes C++ create a copy constructor because it returns by value
-Integer Add(int x, int y)
+<span style="color: #7f7f7f;">// </span><span style="color: #006400; font-weight: bold;">NOTE</span><span style="color: #7f7f7f;">: This function makes C++ create a copy constructor because it returns by value</span>
+<span style="color: #98f5ff;">Integer</span> <span style="color: #daa520;">Add</span>(<span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">x</span>, <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">y</span>)
 {
-    return Integer(x + y);
+    <span style="color: #00bfff;">return</span> Integer(x + y);
 }
 
-int main()
+<span style="color: #98f5ff;">int</span> <span style="color: #daa520;">main</span>()
 {
 
-    Integer i(5);
-    Integer i2(i); // This causes C++ to generate a default copy constructor for our class
+    <span style="color: #98f5ff;">Integer</span> <span style="color: #4eee94;">i</span>(5);
+    <span style="color: #98f5ff;">Integer</span> <span style="color: #4eee94;">i2</span>(i); <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">This causes C++ to generate a default copy constructor for our class</span>
 
-    i2 = i; // This also invokes a copy constructor
-    std::cout &lt;&lt; i.GetValue() &lt;&lt; std::endl;
+    i2 = i; <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">This also invokes a copy constructor</span>
+    <span style="color: #a2cd5a;">std</span>::cout &lt;&lt; i.GetValue() &lt;&lt; <span style="color: #a2cd5a;">std</span>::endl;
 
-    return 0;
+    <span style="color: #00bfff;">return</span> 0;
 }
 
 </pre>
 </div>
 
 <div class="org-src-container">
-<pre class="src src-C++">// How to create a custom copy constructor
+<pre class="src src-C++"><span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">How to create a custom copy constructor</span>
 
-class Integer
+<span style="color: #00bfff;">class</span> <span style="color: #98f5ff;">Integer</span>
 {
-    int *m_pInt;
-public:
-    // This is how we declare a copy constructor, it MUST pass object by reference
-    Integer(Integer &amp;Obj);
+    <span style="color: #98f5ff;">int</span> *<span style="color: #4eee94;">m_pInt</span>;
+<span style="color: #00bfff;">public</span>:
+    <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">This is how we declare a copy constructor, it MUST pass object by reference</span>
+    <span style="color: #daa520;">Integer</span>(<span style="color: #98f5ff;">Integer</span> &amp;<span style="color: #4eee94;">Obj</span>);
 };
 
-Integer::Integer(Integer &amp;Obj)
+<span style="color: #a2cd5a;">Integer</span>::<span style="color: #daa520;">Integer</span>(<span style="color: #98f5ff;">Integer</span> &amp;<span style="color: #4eee94;">Obj</span>)
 {
-    // The following is called a "Deep Copy" of a pointer. A shallow copy just copies the address.
-    m_pInt = new int;
+    <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">The following is called a "Deep Copy" of a pointer. A shallow copy just copies the address.</span>
+    m_pInt = <span style="color: #00bfff;">new</span> <span style="color: #98f5ff;">int</span>;
     *m_pInt = Obj.m_pInt;
 
 }
@@ -545,12 +546,12 @@ Integer::Integer(Integer &amp;Obj)
 </div>
 </div>
 
-<div id="outline-container-orge0029e8" class="outline-4">
-<h4 id="orge0029e8"><span class="section-number-4">3.5.1</span> How to tell if a class needs a custom copy constructor</h4>
+<div id="outline-container-org17f7de6" class="outline-4">
+<h4 id="org17f7de6"><span class="section-number-4">3.5.1</span> How to tell if a class needs a custom copy constructor</h4>
 <div class="outline-text-4" id="text-3-5-1">
 </div>
 <ol class="org-ol">
-<li><a id="org1442cdc"></a>The rule of 3<br />
+<li><a id="org250ae04"></a>The rule of 3<br />
 <div class="outline-text-5" id="text-3-5-1-1">
 <p>
 The Rule of Three states that if a type ever needs to have a
@@ -563,8 +564,8 @@ destructor, then it must have all three.
 </div>
 </div>
 
-<div id="outline-container-org23cdc4d" class="outline-3">
-<h3 id="org23cdc4d"><span class="section-number-3">3.6</span> Delegating constructor</h3>
+<div id="outline-container-org96e8da7" class="outline-3">
+<h3 id="org96e8da7"><span class="section-number-3">3.6</span> Delegating constructor</h3>
 <div class="outline-text-3" id="text-3-6">
 <p>
 Delegating constructor are constructors that call other constructors.
@@ -579,36 +580,36 @@ the other constructors.
 
 <div class="org-src-container">
 <pre class="src src-C++">
-class Car
+<span style="color: #00bfff;">class</span> <span style="color: #98f5ff;">Car</span>
 {
-public:
-    Car::Car();
-    Car::Car(float Fuel);
-    Car::Car(float Fuel, int Passengers);
-private:
-    int Passengers;
-    float Amount;
+<span style="color: #00bfff;">public</span>:
+    <span style="color: #a2cd5a;">Car</span>::<span style="color: #daa520;">Car</span>();
+    <span style="color: #a2cd5a;">Car</span>::<span style="color: #daa520;">Car</span>(<span style="color: #98f5ff;">float</span> <span style="color: #4eee94;">Fuel</span>);
+    <span style="color: #a2cd5a;">Car</span>::<span style="color: #daa520;">Car</span>(<span style="color: #98f5ff;">float</span> <span style="color: #4eee94;">Fuel</span>, <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">Passengers</span>);
+<span style="color: #00bfff;">private</span>:
+    <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">Passengers</span>;
+    <span style="color: #98f5ff;">float</span> <span style="color: #4eee94;">Amount</span>;
 };
 
-Car::Car : Car(0) // The default constructor invokes the constructor
-		  // with 1 parameter, the constructor invoked runs
-		  // first. In this case the constructor with the 2
-		  // parameters is the one that gets executed first
+<span style="color: #a2cd5a;">Car</span>::Car : Car(0) <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">The default constructor invokes the constructor</span>
+          <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">with 1 parameter, the constructor invoked runs</span>
+          <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">first. In this case the constructor with the 2</span>
+          <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">parameters is the one that gets executed first</span>
 {
 
 }
 
-Car::Car(float amount) : Car(amount, 0) // The constructor with 1
-					// parameter invokes the
-					// constructor with 2
-					// parameters
+<span style="color: #a2cd5a;">Car</span>::<span style="color: #daa520;">Car</span>(<span style="color: #98f5ff;">float</span> <span style="color: #4eee94;">amount</span>) : Car(amount, 0) <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">The constructor with 1</span>
+                    <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">parameter invokes the</span>
+                    <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">constructor with 2</span>
+                    <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">parameters</span>
 {
 }
 
-Car::Car(float amount, int passengers) // This constructor holds the
-				       // shared code between
-				       // constructors. Now it lives
-				       // in only one place
+<span style="color: #a2cd5a;">Car</span>::<span style="color: #daa520;">Car</span>(<span style="color: #98f5ff;">float</span> <span style="color: #4eee94;">amount</span>, <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">passengers</span>) <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">This constructor holds the</span>
+                       <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">shared code between</span>
+                       <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">constructors. Now it lives</span>
+                       <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">in only one place</span>
 {
     Amount = amount;
     Passengers = passengers;
@@ -620,8 +621,8 @@ Car::Car(float amount, int passengers) // This constructor holds the
 </div>
 </div>
 
-<div id="outline-container-org7232865" class="outline-3">
-<h3 id="org7232865"><span class="section-number-3">3.7</span> default and delete functions</h3>
+<div id="outline-container-org013bc86" class="outline-3">
+<h3 id="org013bc86"><span class="section-number-3">3.7</span> default and delete functions</h3>
 <div class="outline-text-3" id="text-3-7">
 <p>
 In C++11 you can request the compiler to create default implementation
@@ -639,12 +640,12 @@ You can only use the default keyword with those functions that can be created by
 
 <div class="org-src-container">
 <pre class="src src-C++">
-class Integer
+<span style="color: #00bfff;">class</span> <span style="color: #98f5ff;">Integer</span>
 {
-    int m_Value{0};
-public:
-    Integer() = default; // This request the compiler to create a default constructor
-    Integer(const Integer &amp;Object) = default; // Request the compiler to generate a default copy constructor
+    <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">m_Value</span>{0};
+<span style="color: #00bfff;">public</span>:
+    <span style="color: #daa520;">Integer</span>() = <span style="color: #00bfff;">default</span>; <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">This request the compiler to create a default constructor</span>
+    <span style="color: #daa520;">Integer</span>(<span style="color: #00bfff;">const</span> <span style="color: #98f5ff;">Integer</span> &amp;<span style="color: #4eee94;">Object</span>) = <span style="color: #00bfff;">default</span>; <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">Request the compiler to generate a default copy constructor</span>
 };
 
 </pre>
@@ -657,17 +658,17 @@ functions.
 
 <div class="org-src-container">
 <pre class="src src-C++">
-class Integer
+<span style="color: #00bfff;">class</span> <span style="color: #98f5ff;">Integer</span>
 {
-    int m_Value{0};
-public:
-    Integer(const Integer &amp;Object) = delete; // This request the compiler to not generate a copy constructor.
+    <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">m_Value</span>{0};
+<span style="color: #00bfff;">public</span>:
+    <span style="color: #daa520;">Integer</span>(<span style="color: #00bfff;">const</span> <span style="color: #98f5ff;">Integer</span> &amp;<span style="color: #4eee94;">Object</span>) = <span style="color: #00bfff;">delete</span>; <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">This request the compiler to not generate a copy constructor.</span>
 };
 
-void main()
+<span style="color: #98f5ff;">void</span> <span style="color: #daa520;">main</span>()
 {
-    Integer i1;
-    Integer i2(i1); // This will not compile since we prohibited a copy constructor to be used.
+    <span style="color: #98f5ff;">Integer</span> <span style="color: #4eee94;">i1</span>;
+    <span style="color: #98f5ff;">Integer</span> <span style="color: #4eee94;">i2</span>(i1); <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">This will not compile since we prohibited a copy constructor to be used.</span>
 }
 
 </pre>
@@ -678,21 +679,21 @@ Unlike default, delete can be used in any kind of function.
 </p>
 <div class="org-src-container">
 <pre class="src src-C++">
-void Test(int Input)
+<span style="color: #98f5ff;">void</span> <span style="color: #daa520;">Test</span>(<span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">Input</span>)
 {
     cout &lt;&lt; Input;
 }
 
-void Test(float Input) = delete;
+<span style="color: #98f5ff;">void</span> <span style="color: #daa520;">Test</span>(<span style="color: #98f5ff;">float</span> <span style="color: #4eee94;">Input</span>) = <span style="color: #00bfff;">delete</span>;
 
 
-void main()
+<span style="color: #98f5ff;">void</span> <span style="color: #daa520;">main</span>()
 {
-int A = 1;
-float B = 10.0f;
-Test(B); // Without using the keyword delete, The parameter would be
-	 // converted to int and the int function called. Now this is a
-	 // compile time error.
+<span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">A</span> = 1;
+<span style="color: #98f5ff;">float</span> <span style="color: #4eee94;">B</span> = 10.0f;
+Test(B); <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">Without using the keyword delete, The parameter would be</span>
+     <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">converted to int and the int function called. Now this is a</span>
+     <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">compile time error.</span>
 }
 
 </pre>
@@ -702,7 +703,7 @@ Test(B); // Without using the keyword delete, The parameter would be
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2022-06-04 Sat 15:49</p>
+<p class="date">Created: 2022-06-06 Mon 12:31</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

@@ -1,4 +1,5 @@
 #+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-bigblow.setup
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="notes.css" />
 
 These are my notes from the Udemy course Complete Modern C++ (C++11/14/17)
 
@@ -148,7 +149,7 @@ static variables
 - They have to be defined outside the class for initialization
 - The compiler by default assigns 0 as a default value
 
-#+BEGIN_SRC C+++
+#+BEGIN_SRC C++
 class car
 {
 private:
